@@ -42,7 +42,7 @@ chrome.runtime.sendMessage("config", function(response) {
       }
       for (i = replacementsObject.length - 1; i >= 0; i--) {
         node.nodeValue = node.nodeValue.replace(replacementsObject[i][0], function(match) {
-          return matchCase(replacementsObject[i][1], match);
+          return '<span class="xkcd-substitution">' + matchCase(replacementsObject[i][1], match) + '</span>';
         });
       }
     };
